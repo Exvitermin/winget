@@ -1,0 +1,525 @@
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+# This configuration is based upon: https://github.com/RobCannon/boxstarter/blob/32fef6dbc8b588df1b740d952c7b34ba9238d4e2/configuration.dsc.yaml
+properties:
+  configurationVersion: 0.2.0
+
+  ##############################
+  # Libraries
+  # Web Browsers
+  # CLIs
+  # Dev Tools
+  # Programming Languages
+  # Productivity Apps
+  # Communication Apps
+  # Misc Utils
+  # Windows features
+  # Services
+  # Registry Settings
+  # Fonts
+  ##############################
+
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: "10.0.22000"
+
+  resources:
+    
+    # Libraries
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Microsoft Visual C++ 2012 Redistributable x86
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2012.x86
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Microsoft Visual C++ 2012 Redistributable x64
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2012.x64
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Microsoft Visual C++ 2013 Redistributable x86
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2013.x86
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Microsoft Visual C++ 2013 Redistributable x64
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2013.x64
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Microsoft Visual C++ 2015-2022 Redistributable x86
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2015+.x86
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Microsoft Visual C++ 2015-2022 Redistributable x64
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VCRedist.2015+.x64
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Microsoft Net SDK 7
+        allowPrerelease: true
+      settings:
+        id: Microsoft.DotNet.SDK.7
+        source: winget
+
+    # Web Browsers
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Brave
+        allowPrerelease: true
+      settings:
+        id: Brave.Brave
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Firefox
+        allowPrerelease: true
+      settings:
+        id: Mozilla.Firefox
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Google Chrome
+        allowPrerelease: true
+      settings:
+        id: Google.Chrome
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Windows Terminal
+        allowPrerelease: true
+      settings:
+        id: Microsoft.WindowsTerminal
+        source: winget
+
+    # CLIs
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Docker CLI
+        allowPrerelease: true
+      settings:
+        id: Docker.DockerCLI
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install GitHub CLI
+        allowPrerelease: true
+      settings:
+        id: GitHub.cli
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Mirantis Lens
+        allowPrerelease: true
+      settings:
+        id: Mirantis.Lens
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Postman
+        allowPrerelease: true
+      settings:
+        id: Postman.Postman
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Kubectl
+        allowPrerelease: true
+      settings:
+        id: Kubernetes.kubectl
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Kubelogin
+        allowPrerelease: true
+      settings:
+        id: Microsoft.Azure.Kubelogin
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Kubectx
+        allowPrerelease: true
+      settings:
+        id: ahmetb.kubectx
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Kubens
+        allowPrerelease: true
+      settings:
+        id: ahmetb.kubens
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install pgAdmin
+        allowPrerelease: true
+      settings:
+        id: PostgreSQL.pgadmin
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install PuTTY
+        allowPrerelease: true
+      settings:
+        id: PuTTY.PuTTY
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Azure Storage Explorer
+        allowPrerelease: true
+      settings:
+        id: Microsoft.Azure.StorageExplorer
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Azure CLI
+        allowPrerelease: true
+      settings:
+        id: Microsoft.AzureCLI
+        source: winget
+
+    # Dev Tools
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Ubuntu 22.04 LTS (WSL)
+        allowPrerelease: true
+      settings:
+        id: Canonical.Ubuntu.2204
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Visual Studio Code
+        allowPrerelease: true
+      settings:
+        id: Microsoft.VisualStudioCode
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Git
+        allowPrerelease: true
+      settings:
+        id: Git.Git
+        source: winget
+
+    # Programming Languages
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install PowerShell 7
+      allowPrerelease: true
+      settings:
+        id: Microsoft.PowerShell
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Go Programming Language
+        allowPrerelease: true
+      settings:
+        id: GoLang.Go
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Python Programming Language
+        allowPrerelease: true
+      settings:
+        id: Python.Python.3.11
+        source: winget
+
+    # Productivity Apps
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Microsoft Teams
+        allowPrerelease: true
+      settings:
+        id: Microsoft.Teams
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install eM Client
+        allowPrerelease: true
+      settings:
+        id: eMClient.eMClient
+        version: "8.2.1659.0"
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install PowerToys
+        allowPrerelease: true
+      settings:
+        id: Microsoft.PowerToys
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install OneDrive
+        allowPrerelease: true
+      settings:
+        id: Microsoft.OneDrive
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Notion
+        allowPrerelease: true
+      settings:
+        id: Notion.Notion
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Obsidian
+        allowPrerelease: true
+      settings:
+        id: Obsidian.Obsidian
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Typora
+        allowPrerelease: true
+      settings:
+        id: appmakes.Typora
+        source: winget
+
+    # Communication Apps
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Slack
+        allowPrerelease: true
+      settings:
+        id: SlackTechnologies.Slack
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Discord
+        allowPrerelease: true
+      settings:
+        id: Discord.Discord
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Zoom
+        allowPrerelease: true
+      settings:
+        id: Zoom.Zoom
+        source: winget
+
+    # Misc Utils
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install oh-my-posh
+        allowPrerelease: true
+      settings:
+        id: JanDeDobbeleer.OhMyPosh
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install SharpKeys
+        allowPrerelease: true
+      settings:
+        id: RandyRants.SharpKeys
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install PaintDotNet
+        allowPrerelease: true
+      settings:
+        id: dotPDNLLC.paintdotnet
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Ditto
+        allowPrerelease: true
+      settings:
+        id: Ditto.Ditto
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install 7zip
+        allowPrerelease: true
+      settings:
+        id: 7zip.7zip
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Notepad++
+        allowPrerelease: true
+      settings:
+        id: Notepad++.Notepad++
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Greenshot
+        allowPrerelease: true
+      settings:
+        id: Greenshot.Greenshot
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Adobe Acrobat Reader DC (64-bit)
+        allowPrerelease: true
+      settings:
+        id: Adobe.Acrobat.Reader.64-bit
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install QuickLook
+        allowPrerelease: true
+      settings:
+        id: QL-Win.quicklook
+        source: winget
+
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install VLC
+        allowPrerelease: true
+      settings:
+        id: VideoLAN.VLC
+        source: winget
+
+    # Windows Features
+    - resource: PSDscResources/WindowsOptionalFeature
+      directives:
+        description: Disable Windows Features
+      settings:
+        Name: [TelnetClient]
+        Ensure: Absent
+
+    - resource: PSDscResources/WindowsOptionalFeature
+      directives:
+        description: Enable Windows Features
+      settings:
+        Name: [Microsoft-Hyper-V-All]
+        Ensure: Present
+
+    # Registry Settings
+    - resource: PSDscResources/Registry
+      directives:
+        description: Show Hidden Files
+      settings:
+        Key: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+        ValueName: Hidden
+        ValueType: DWord
+        ValueData: 1
+        Force: true
+
+    - resource: PSDscResources/Registry
+      directives:
+        description: Do not Hide File Extensions
+      settings:
+        Key: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+        ValueName: HideFileExt
+        ValueType: DWord
+        ValueData: 0
+        Force: true
+
+    - resource: PSDscResources/Registry
+      directives:
+        description: Navigation Pane Expand to Current Folder
+      settings:
+        Key: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+        ValueName: NavPaneExpandToCurrentFolder
+        ValueType: DWord
+        ValueData: 1
+        Force: true
+
+    - resource: PSDscResources/Registry
+      directives:
+        description: Turn off Search box on Taskbar
+      settings:
+        Key: HKCU:\Software\Microsoft\Windows\CurrentVersion\Search
+        ValueName: SearchboxTaskbarMode
+        ValueType: DWord
+        ValueData: 0
+        Force: true
+
+    - resource: PSDscResources/Registry
+      directives:
+        description: Set 'Show more options' by default
+      settings:
+        Key: HKCU:\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32
+        ValueName: ""
+        Force: true
+
+    # Services
+    - resource: PSDscResources/Service
+      directives:
+        description: Ensure Services running
+      settings:
+        Name: [Dhcp]
+        Ensure: Present
+        State: Running
+
+    # Fonts
+    - resource: DSCR_Font/cFont
+      directives:
+        description: Install SauceCodePro Font
+      settings:
+        FontName: SauceCodePro NF Regular
+        FontFile: https://github.com/ryanoasis/nerd-fonts/raw/2.1.0/patched-fonts/SourceCodePro/Regular/complete/Sauce%20Code%20Pro%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf
+
+    - resource: DSCR_Font/cFont
+      directives:
+        description: Install Source Han Code JP Font
+      settings:
+        FontName: Source Han Code JP
+        FontFile: https://github.com/adobe-fonts/source-han-code-jp/releases/download/2.012R/SourceHanCodeJP.ttc
+
+    - resource: DSCR_Font/cFont
+      directives:
+        description: Install CaskaydiaCove Font
+      settings:
+        FontName: CaskaydiaCove NF Regular
+        FontFile: https://github.com/ryanoasis/nerd-fonts/raw/2.1.0/patched-fonts/CascadiaCode/complete/Caskaydia%20Cove%20Nerd%20Font%20Complete%20Mono%20Windows%20Compatible.ttf
