@@ -239,6 +239,14 @@ properties:
       settings:
         id: Git.Git
         source: winget
+        
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      directives:
+        description: Install Azure Functions Core Tools
+        allowPrerelease: true
+      settings:
+        id: Microsoft.Azure.FunctionsCoreTools
+        source: winget
 
     # Programming Languages
     - resource: Microsoft.WinGet.DSC/WinGetPackage
